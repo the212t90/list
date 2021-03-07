@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}参考文献リスト{% endblock title %}
+
+{% block content %}
+<h4 class="mt-4 border-bottom">参考文献一覧(オンライン)</h4>
+<a href="{% url 'book:rcreate' %}">追加</a>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">タイトル</th>
+      <th scope="col">サイト名</th>
+      <th scope="col">URL</th>
+      <th scope="col">閲覧日</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in object_list %}
+    <tr>
+      <td scope="row"><a href="{% url 'book:rdetail' pk=item.id %}">{{ item.id }}</a></td>
+      <td>{{ item.reference }}</td>
+      <td>{{ item.site }}</td>
+      <td>{{ item.url }}</td>
+      <td>{{ item.day }}</td>
+      <td>
+        <a href="{% url 'book:rupdate' pk=item.id %}">修正</a>
+        <a href="{% url 'book:rdelete' pk=item.id %}">削除</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

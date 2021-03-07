@@ -1,0 +1,44 @@
+{% load i18n static %}
+<!DOCTYPE html>{% get_current_language as LANGUAGE_CODE %}
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static 'book/css/bootstrap.min.css' %}">
+  {% block extra_css %}{% endblock %}
+  <title>{% block title %}参考文献リスト{% endblock %}</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'book:list' %}">書籍</a>
+        </li>
+      </ul>
+    </div>
+  
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'book:rlist' %}">ネット</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+    <br>
+    <div class="container">
+      {% block content %}
+      {{ content }}
+      {% endblock %}
+    </div>
+  <script src="{% static 'book/js/jquery-3.5.1.min.js' %}"></script>
+  <script src="{% static 'book/js/bootstrap.bundle.min.js' %}"></script>
+  
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>本の詳細</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <td>{{ object.id }}</td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td>{{ object.book }}</td>
+    </tr>
+    <tr>
+        <th>著者</th>
+        <td>{{ object.author }}</td>
+    </tr>
+    <tr>
+        <th>出版社</th>
+        <td>{{ object.publisher }}</td>
+    </tr>
+    <tr>
+        <th>発行年</th>
+        <td>{{ object.year }}</td>
+    </tr>
+    <tr>
+        <th>該当ページ</th>
+        <td>{{ object.page }}</td>
+    </tr>
+     <tr>
+        <th>備考</th>
+        <td>{{ object.remarks }}</td>
+    </tr>
+</table>
+<a href="{% url 'book:list' %}">戻る</a>
+{%endblock%}

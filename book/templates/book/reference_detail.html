@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>サイトの詳細</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <td>{{ object.id }}</td>
+    </tr>
+    <tr>
+        <th>タイトル</th>
+        <td>{{ object.reference }}</td>
+    </tr>
+    <tr>
+        <th>サイト名</th>
+        <td>{{ object.site }}</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>{{ object.url }}</td>
+    </tr>
+    <tr>
+        <th>閲覧日</th>
+        <td>{{ object.day }}</td>
+    </tr>
+    <tr>
+        <th>該当ページ</th>
+        <td>{{ object.page }}</td>
+    </tr>
+     <tr>
+        <th>備考</th>
+        <td>{{ object.remarks }}</td>
+    </tr>
+</table>
+<a href="{% url 'book:rlist' %}">戻る</a>
+{%endblock%}
