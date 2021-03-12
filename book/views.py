@@ -4,7 +4,7 @@ from .models import Book
 from .forms import BookForm
 from .models import Reference
 from .forms import ReferenceForm
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 # 参考文献の一覧表示機能
